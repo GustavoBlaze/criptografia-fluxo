@@ -5,10 +5,9 @@
 
 
 int main(){
-  // char message[20] = "Hello"; // Mensagem a ser criptografada
-  // char password[20'] = "12345"; // Senha para criptografar a mensagem
   char message[50] = "";
   char password[50] = "";
+  char confirmPassword[50] = "";
 
   printf("Digite uma mensagem: ");
   scanf("%50[^\n]%*c", &message);
@@ -17,23 +16,19 @@ int main(){
   scanf("%50[^\n]%*c", &password);
 
   int messageLength = strlen(message); // Pegando o tamanho da mensagem 
-  char  random[messageLength], // Iniciando o vetor que vai guardar a chave pseudo-randomica
-        encrypted[messageLength], // Iniciando o vetor que vai guardar a mensagem codificada
-        decrypted[messageLength]; // Iniciando o vetor que vai guardar a mensagem decriptada
 
-  // memset(&random, '\0', messageLength);
-  // memset(&encrypted, '\0', messageLength);
-  // memset(&decrypted, '\0', messageLength);
+  char  random[messageLength + 1]     = ""; // Iniciando o vetor que vai guardar a chave pseudo-randomica
+  char  encrypted[messageLength + 1]  = ""; // Iniciando o vetor que vai guardar a mensagem codificada
+  char  decrypted[messageLength + 1]  = ""; // Iniciando o vetor que vai guardar a mensagem decriptada
+
   
   for(int i=0; i < messageLength; i++){ // loop de 0 até tamanhoDaMensagem - 1
-    srand(password[i % messageLength]); // Passando a semente do numero randomico
+    srand(password[i % strlen(password)]); // Passando a semente do numero randomico
     
     random[i] = rand(); // Gerando uma letra randomica e guardando dentro do vetor
   }
 
-  printf("Mensagem a ser criptografa: %s\n", message);
-  printf("Senha: %s\n", password);
-  printf("Tamanho da mensagem em bytes: %d\n", messageLength);
+  printf("Tamanho da mensagem: %d\n", messageLength);
   
   // Criptografando
   for(int i=0; i < messageLength; i++){ 
