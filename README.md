@@ -8,7 +8,7 @@ O programa em questão recebe uma mensagem e uma senha de no máximo 50 caracter
 
 1. `git clone git@github.com:GustavoBlaze/criptografia-fluxo.git`
 2. `cd criptografia-fluxo`
-3. `g++ main.cpp -o main`
+3. `g++ -Wformat=0 main.cpp -o main`
 4. `./main`
 5. Entre com a mensagem
 6. Entre com a senha
