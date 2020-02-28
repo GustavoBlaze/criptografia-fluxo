@@ -7,7 +7,6 @@
 int main(){
   char message[50] = "";
   char password[50] = "";
-  char confirmPassword[50] = "";
 
   printf("Digite uma mensagem: ");
   scanf("%50[^\n]%*c", &message);
