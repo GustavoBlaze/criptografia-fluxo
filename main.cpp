@@ -16,9 +16,9 @@ int main(){
 
   int messageLength = strlen(message); // Pegando o tamanho da mensagem 
 
-  char  random[messageLength + 1]     = ""; // Iniciando o vetor que vai guardar a chave pseudo-randomica
-  char  encrypted[messageLength + 1]  = ""; // Iniciando o vetor que vai guardar a mensagem codificada
-  char  decrypted[messageLength + 1]  = ""; // Iniciando o vetor que vai guardar a mensagem decriptada
+  char  random[messageLength + 1]; // Iniciando o vetor que vai guardar a chave pseudo-randomica
+  char  encrypted[messageLength + 1]; // Iniciando o vetor que vai guardar a mensagem codificada
+  char  decrypted[messageLength + 1]; // Iniciando o vetor que vai guardar a mensagem decriptada
 
   
   for(int i=0; i < messageLength; i++){ // loop de 0 até tamanhoDaMensagem - 1
@@ -41,7 +41,7 @@ int main(){
     decrypted[i] = encrypted[i] ^ random[i]; // C ^ B = A
   }
 
-  memset(decrypted + messageLength, '\0', 1);
+  // memset(decrypted + messageLength, '\0', 1);
 
   printf("Decodificada: %s\n", decrypted);
 
