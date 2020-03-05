@@ -6,7 +6,7 @@ O programa em questão recebe uma mensagem e uma senha de no máximo 50 caracter
 
 ### :rocket: Compilando e executando (Linux e MacOS)
 
-1. `git clone git@github.com:GustavoBlaze/criptografia-fluxo.git`
+1. `git clone https://github.com/GustavoBlaze/criptografia-fluxo.git`
 2. `cd criptografia-fluxo`
 3. `g++ -Wformat=0 main.cpp -o main`
 4. `./main`
